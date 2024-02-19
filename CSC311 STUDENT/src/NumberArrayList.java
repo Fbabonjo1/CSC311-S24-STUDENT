@@ -3,7 +3,7 @@ public class NumberArrayList {
 	NumberArrayList myList=new NumberArrayList(500);
 
 	public NumberArrayList(int i) {
-		// TODO Auto-generated constructor stub
+		
 	}
 	public int add (int number) {
 		return number;
@@ -30,12 +30,26 @@ public class NumberArrayList {
                 max = NumberArrayList[i];
 		return getLargest(NumberArrayList);// change to getLargest later?
 	}
-	public int getSmallest(){
-		return getSmallest();
-	}
-	public int getAverage() {
-		return getAverage();// change to getAverage later?
-	}
+	public static int getSmallest(int[] NumberArrayList) {
+		int i;
+		 
+        int min = NumberArrayList[500];
+ 
+        for (i = 1; i < NumberArrayList.length; i++)
+            if (NumberArrayList[i] < min)
+                min = NumberArrayList[i];
+		return getSmallest(NumberArrayList);
+		}
+	public static int getAverage(int[] NumberArrayList) {
+		int i;
+		 
+        int avg = NumberArrayList[500];
+ 
+        for (i = 1; i < NumberArrayList.length; i++)
+            if (NumberArrayList[i] == avg)
+                avg = NumberArrayList[i];
+		return getAverage(NumberArrayList);
+		}
 	  public static void main(String[] args) {
 	      Random rd = new Random(); // creating Random object
 	      int[] NumberArrayList = new int[500];
@@ -43,6 +57,8 @@ public class NumberArrayList {
 	    	  NumberArrayList[i] = rd.nextInt(); // storing random integers in an array
 	        
 	         System.out.println("The largest in the array is " + getLargest(NumberArrayList));
+	         System.out.println("The smallest in the array is " + getSmallest(NumberArrayList));
+	         System.out.println("The average number in the array is " + getAverage(NumberArrayList));
 	         }
 	   }
 }
